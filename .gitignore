@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # AoC input files
-.in
+*.in
