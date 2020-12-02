@@ -6,15 +6,12 @@ with open(INPUT_FILE, 'r') as f:
     inp = f.read().splitlines()
 
 def valid(line):
-    l = line.strip().split()
-    m = int(l[0].split("-")[0])
-    M = int(l[0].split("-")[1])
-    letter = l[1][:-1]
-    s = l[2]
-
+    nums, letter, s = line.strip().split()
+    m, M = map(int, nums.split("-"))
+    letter = letter[0]
     # part 1
     #c = Counter(s)
-    #return c[letter] >= m and c[letter] <= M
+    #return m <= c[letter] <= M
 
     return (s[m - 1] == letter) ^ (s[M - 1] == letter)
 
