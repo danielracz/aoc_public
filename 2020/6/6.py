@@ -9,9 +9,9 @@ with open(INPUT_FILE, 'r') as f:
 print(sum(len(set("".join(group.strip().split("\n")))) for group in inp))
 
 # part2
-print(sum(1 for group in inp
-          for c in set(group)
-          if all(c in line for line in group.splitlines())))
+print(sum(all(c in line for line in group.splitlines())
+          for group in inp
+          for c in set(group)))
 
 # part2 using reduce (reddit)
 print(sum(len(reduce(set.intersection, (set(line)
