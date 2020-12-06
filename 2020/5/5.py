@@ -1,12 +1,3 @@
-import numpy as np
-import networkx as nx
-import copy
-import itertools
-import math
-
-from collections import defaultdict, deque, Counter
-from scipy.signal import convolve
-
 INPUT_FILE = "5.in"
 
 with open(INPUT_FILE, 'r') as f:
