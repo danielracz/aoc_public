@@ -34,9 +34,6 @@ print(len(nxa.dfs_tree(G, "shinygold").nodes) - 1)
 
 H = G.reverse()
 def get_sum(H, node):
-    if H.out_degree(node) == 0:
-        return 1
-
     return sum(G[n][node]['weight'] * get_sum(H, n) for n in H.neighbors(node)) + 1
 
 # part2
