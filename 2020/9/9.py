@@ -33,8 +33,6 @@ def sliding_window(seq, n = 2):
 #    return zip(*iterables)
 
 inp = [x for x in inp if x < n]
-for r in range(len(inp)):
-    for window in sliding_window(inp, r):
-        if sum(window) == n:
-            print(min(window) + max(window))
-            exit()
+print(next(max(w) + min(w) for r in range(len(inp))
+           for w in sliding_window(inp, r)
+           if sum(w) == n))
