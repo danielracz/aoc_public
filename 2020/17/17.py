@@ -7,7 +7,7 @@ with open(INPUT_FILE, "r") as f:
 
 def solve(dim, grid, num_cycles):
     assert dim >= 2
-    grid = np.pad(grid[(None,) * (dim - 2)], [(6,)] * dim)
+    grid = np.pad(grid[(None,) * (dim - 2)], [(num_cycles,)] * dim)
     kernel = np.ones(shape = (3,) * dim, dtype = np.int8)
     kernel[(1,) * dim] = 0
 
